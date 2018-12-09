@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="forwardServlet"> Forward </a>
+	<br><br>
+	<a href="redirectServlet"> Redirect</a>
+	<p>
+	请求的转发和重定向
+	1.本质区别，请求的转发只发出一次请求，而重定向则发出了2次请求
+	2.转发地址栏是初次发出请求的地址，请求的重定向，地址栏不在是初次发出请求的地址，地址栏的地址是
+	最后响应的地址
+	3.request对象在请求转发的Servlet中是同一个对象，而重定向不是同一个request对象
+	4.对于请求转发而言，只能转发给当前WEB应用的资源，而对于重定向可以重定向到任何资源
+	5. "/" 对于请求转发来说是代表当前WEB应用的根目录，对于重定向来说是当前WEB站点的根目录
+	 当前站点是http://ip:8080;应用是http://ip:8080/app
+	</p>
+</body>
+</html>
