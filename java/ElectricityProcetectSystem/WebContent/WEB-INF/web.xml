@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>ElectricityProcetectSystem</display-name>
+  <servlet>
+    <servlet-name>electricityResult</servlet-name>
+    <servlet-class>com.elec.servlet.ElectricityResult</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>electricityResult</servlet-name>
+    <url-pattern>/getElecResult</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>uploadElec</servlet-name>
+    <servlet-class>com.elec.servlet.UploadElecValue</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>uploadElec</servlet-name>
+    <url-pattern>/uploadElec</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>steal</servlet-name>
+    <servlet-class>com.elec.servlet.ElectricSteal</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>steal</servlet-name>
+    <url-pattern>/getStealInfo</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>stealDetail</servlet-name>
+    <servlet-class>com.elec.servlet.ElectricStealDetail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stealDetail</servlet-name>
+    <url-pattern>/getStealDetail</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+    <param-name>socketPort</param-name>
+    <param-value>10000</param-value>
+  </context-param>
+  <listener>
+    <description>Socket</description>
+    <listener-class>com.elec.socket.ServerSocketListener</listener-class>
+  </listener>
+  
+</web-app>

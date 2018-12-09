@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>防窃电管理系统</title>
+<link rel="StyleSheet" href="css/dtree.css" type="text/css" />
+<script type="text/javascript" src="scripts/http_ajax.js"></script>
+<script type="text/javascript" src="scripts/Page.js"></script>
+<script type="text/javascript" src="scripts/dtree.js"></script>
+
+
+</head>
+<style>
+table {
+	border-collapse: collapse;
+	border: solid 1px Black;
+}
+
+table td {
+	width: 50px;
+	height: 20px;
+	border: solid 1px Black;
+	padding: 5px;
+}
+
+#header {
+	background-color: #8b8c8d;
+	color: white;
+	text-align: center;
+	padding: 5px;
+	height: 80px;
+}
+
+#main {
+	width: 100%;
+	overflow: hidden;
+}
+
+#main.nav {
+	line-height: 30px;
+	background-color: #eeeeee;
+	/*height: 800px;*/
+	/*width: 100px;*/
+	width: 25%;
+	float: left;
+	padding: 5px;
+	/*outline: none;*/
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:800px;
+  /*   width:100px; */
+  	width: 15%;
+    float:left;
+    padding:5px;          
+}
+#main.section {
+	/*width: 500px;*/
+	width: 75%;
+	/*float: left;*/
+	float: right;
+	height: 800px;
+	padding: 10px;
+}
+
+#footer {
+	background-color: #8b8c8d;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+	bottom: 0px;
+}
+</style>
+
+</head>
+
+<body>
+	<div id="header">
+		<h1>防窃电管理系统</h1>
+	</div>
+	<!-- <div id="main.nav">
+		<button type="button" id="result" onclick="showResult()">查询漏电结果</button>
+
+	</div> -->
+	<div>
+		<marquee id="qiedian" direction="left" behavior="scroll" scrollamount="2" scrolldelay="0" loop="-1" width="100%" height="30" bgcolor="#eeeeee" >
+			
+		</marquee>
+	</div>
+
+	<div id="nav" class="dtree">
+	<!--  
+	<p><a href="javascript: d.openAll();">打开</a> | <a href="javascript: d.closeAll();">关闭</a></p>
+	-->
+	<script type="text/javascript">
+		d = new dTree('d');
+		d.add(0,-1,'基站列表');
+		d.add(1,0,'聊城局基站','index.html');
+		d.add(2,1,'A端变压器','javascript:showResult(1000)');
+		d.add(3,1,'B端铁塔','javascript:showResult(1001)');
+		d.add(4,1,'窃电明细','javascript:getStealDetailInfo(1)');
+		/*基站b*/
+		d.add(5,0,'B基站','index.html');
+		d.add(6,5,'A端变压器','javascript:showResult(1002)');
+		d.add(7,5,'B端铁塔','javascript:showResult(1003)');
+		d.add(8,5,'窃电明细','javascript:getStealDetailInfo(5)');
+		document.write(d);
+		/* save 电表数据*/
+	/* 	submitPost("/ElectricityProcetectSystem/saveElectricMeter","[\"2,3\"]"); */
+	</script>
+
+</div>
+	
+	<div id="main.section">
+		<span id="hpos"></span> <span id="pageindex"></span>
+		<table id="divtable" width="75%" border="1" >
+			<tbody id="group_one">
+
+			</tbody>
+		</table>
+
+	</div>
+
+	<div id="footer">Copyright 北京倍阳格科技有限公司</div>
+
+	<script>
+		var page = null;
+		function showResult(meter) {
+			//get data
+			createXMLHttpRequest();
+			submit("/ElectricityProcetectSystem/getElecResult?id=" + meter);
+			//show data
+			handleStateChange();
+		}
+		function getStealDetailInfo(point) {
+			//get data
+			createXMLHttpRequest();
+			getDetailInfo("/ElectricityProcetectSystem/getStealDetail?id=" + point);
+			//show data
+			handleStateChange3();
+		}
+		window.onload = function (){  //window.onload window 可以省略       
+			//get data
+			createXMLHttpRequest();
+			getPromptInfo("/ElectricityProcetectSystem/getStealInfo" );
+			handleStateChange2();
+		} 
+	</script>
+	
+</body>
+</html>
