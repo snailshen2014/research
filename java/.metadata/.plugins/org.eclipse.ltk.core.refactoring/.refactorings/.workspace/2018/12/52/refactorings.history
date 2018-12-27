@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;vd-iot-rulesengine&apos;" deleteContents="false" description="Delete resource &apos;vd-iot-rulesengine&apos;" element1="/vd-iot-rulesengine" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1545529840667"/>&#x0A;<refactoring comment="Delete resource &apos;rulesengine-drools&apos;" deleteContents="false" description="Delete resource &apos;rulesengine-drools&apos;" element1="/rulesengine-drools" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1545532003635"/>
+</session>

@@ -1,0 +1,11 @@
+{
+	"name": "typescript-repository",
+	"license": "MIT",
+	"version": "0.2.0",
+	"dependencies": {
+		"typescript": "2.4.1",
+		"tslint": "5.4.3",
+		"tslint-language-service": "0.9.6",
+		"@angular/language-service": "4.2.4"
+	}
+}

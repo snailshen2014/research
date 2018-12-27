@@ -1,0 +1,11 @@
+package classloading;
+/**
+* 
+* @des 虚拟机会保证<clinit>() 方法线程安全 
+* @author yanjunShen
+* @date 2018年12月16日  新建
+*/
+
+public class DeadLoopClass {
+
+}

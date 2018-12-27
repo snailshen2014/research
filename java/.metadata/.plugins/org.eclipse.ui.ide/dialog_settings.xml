@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/yanjunshen/Documents/gitcode/research/java/ElectricityProcetectSystem"/>
+		<item value="/Users/yanjunshen/Documents/gitcode/research/java/ThinkingJava"/>
+		<item value="/Users/yanjunshen/Documents/gitcode/research/java/thread"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+	</section>
+</section>
