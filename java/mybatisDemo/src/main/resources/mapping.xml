@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.syj.mybatis.dao.UserDao">
+
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.syj.mybatis.model.User" >
+      select * from user where id = #{0}
+   </select>
+
+    <insert id="addUser" parameterType="com.syj.mybatis.model.User" >
+
+        insert into user(id,name,password,age,deleteFlag) values (
+          #{id,jdbcType=INTEGER},#{name,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},
+          #{age,jdbcType=INTEGER},#{deleteFlag,jdbcType=INTEGER}
+
+        )
+
+    </insert>
+
+    <select id="selectAll" resultType="com.syj.mybatis.model.User" >
+      select * from user where id = #{id}
+   </select>
+
+</mapper>
